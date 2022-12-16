@@ -11,16 +11,15 @@ class DataLoader: DataLoaderProtocol {
                     let shopBook = try JSONDecoder().decode(ShopBook.self, from: data)
                     
                         completion(shopBook)
-                    
                 } catch {
                     print(error)
                 }
             }
         }
-        
         task.resume()
     }
 }
 
 protocol DataLoaderProtocol {
-    func dataLoad(completion: @escaping (ShopBook) -> Void)}
+    func dataLoad(completion: @escaping (ShopBook) -> Void)
+}
