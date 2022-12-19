@@ -32,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPe-L0-dO4">
-                    <rect key="frame" x="0.0" y="33" width="414" height="53"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="53"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsP-bY-4Td">
                             <rect key="frame" x="17" y="11" width="207" height="32"/>
@@ -68,7 +68,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Pof-bX-Heq">
-                    <rect key="frame" x="0.0" y="86" width="414" height="102"/>
+                    <rect key="frame" x="0.0" y="97" width="414" height="102"/>
                     <color key="backgroundColor" systemColor="systemGray4Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="102" id="fUv-4W-tjw"/>
@@ -81,7 +81,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRd-dh-nlm">
-                    <rect key="frame" x="0.0" y="389" width="414" height="52"/>
+                    <rect key="frame" x="0.0" y="400" width="414" height="52"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Seller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8J8-3u-aq0">
                             <rect key="frame" x="17" y="10" width="193" height="32"/>
@@ -116,7 +116,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6Je-Qo-mBD">
-                    <rect key="frame" x="17" y="451" width="380" height="329"/>
+                    <rect key="frame" x="17" y="462" width="380" height="318"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Chd-zg-ysJ">
                         <size key="itemSize" width="128" height="128"/>
@@ -190,7 +190,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="DpW-9U-SR2">
-                    <rect key="frame" x="7" y="196" width="386" height="182"/>
+                    <rect key="frame" x="7" y="207" width="386" height="182"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="182" id="8G6-7q-M11"/>
@@ -220,7 +220,7 @@
                 <constraint firstItem="Pof-bX-Heq" firstAttribute="top" secondItem="jPe-L0-dO4" secondAttribute="bottom" id="LML-Ud-H3F"/>
                 <constraint firstItem="gOY-YE-mh1" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="MJK-Hk-i6M"/>
                 <constraint firstItem="gOY-YE-mh1" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-1" id="aJe-nF-OE3"/>
-                <constraint firstItem="jPe-L0-dO4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="33" id="fOc-PD-W27"/>
+                <constraint firstItem="jPe-L0-dO4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="fOc-PD-W27"/>
                 <constraint firstItem="DpW-9U-SR2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="7" id="kMl-qB-60x"/>
                 <constraint firstItem="jPe-L0-dO4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="lNE-f9-gbS"/>
                 <constraint firstItem="DpW-9U-SR2" firstAttribute="top" secondItem="Pof-bX-Heq" secondAttribute="bottom" constant="8" id="nda-cQ-Ub2"/>
