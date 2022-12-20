@@ -1,22 +1,106 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Mark Pro.ttf">
+            <string>MarkPro</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartViewController" customModule="Ecommerce_Concept" customModuleProvider="target">
             <connections>
+                <outlet property="addAddressImageView" destination="Dbn-8V-2Fd" id="HCw-9c-a9R"/>
+                <outlet property="addAddressView" destination="GBW-oA-IBJ" id="v2C-1v-tMo"/>
+                <outlet property="backButtonImageView" destination="H2c-lJ-eXO" id="Dt8-09-i3q"/>
+                <outlet property="backButtonView" destination="CVj-1R-HB4" id="YVv-lu-IZL"/>
+                <outlet property="cartView" destination="6Fb-Fk-zKa" id="eGO-CB-Pof"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVj-1R-HB4">
+                    <rect key="frame" x="42" y="79" width="37" height="37"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H2c-lJ-eXO">
+                            <rect key="frame" x="15" y="11" width="7" height="14"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0039215686269999999" green="0.0" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="EJQ-Dc-VLd"/>
+                        <constraint firstAttribute="width" constant="37" id="Kc6-3b-Orx"/>
+                        <constraint firstItem="H2c-lJ-eXO" firstAttribute="centerY" secondItem="CVj-1R-HB4" secondAttribute="centerY" id="Otx-3z-3nZ"/>
+                        <constraint firstItem="H2c-lJ-eXO" firstAttribute="centerX" secondItem="CVj-1R-HB4" secondAttribute="centerX" id="tUu-Fy-XDk"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBW-oA-IBJ">
+                    <rect key="frame" x="320" y="88" width="37" height="37"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dbn-8V-2Fd">
+                            <rect key="frame" x="11.5" y="9.5" width="14" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="14" id="kNf-lc-8DU"/>
+                                <constraint firstAttribute="height" constant="18" id="nh0-zc-gCe"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="fB7-5n-r4t"/>
+                        <constraint firstItem="Dbn-8V-2Fd" firstAttribute="centerY" secondItem="GBW-oA-IBJ" secondAttribute="centerY" id="fDG-Lq-6aA"/>
+                        <constraint firstItem="Dbn-8V-2Fd" firstAttribute="centerX" secondItem="GBW-oA-IBJ" secondAttribute="centerX" id="jSv-Fs-owJ"/>
+                        <constraint firstAttribute="width" constant="37" id="wYf-P1-fjl"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Add address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nap-8J-HBk">
+                    <rect key="frame" x="220.5" y="96" width="90.5" height="21"/>
+                    <fontDescription key="fontDescription" name="MarkPro" family="Mark Pro" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyg-sf-caw">
+                    <rect key="frame" x="42" y="166" width="130" height="45"/>
+                    <fontDescription key="fontDescription" name="MarkPro" family="Mark Pro" pointSize="35"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fb-Fk-zKa">
+                    <rect key="frame" x="0.0" y="260" width="414" height="602"/>
+                    <color key="backgroundColor" red="0.0039215686269999999" green="0.0" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Iyg-sf-caw" firstAttribute="top" secondItem="CVj-1R-HB4" secondAttribute="bottom" constant="50" id="8VE-5M-7up"/>
+                <constraint firstItem="GBW-oA-IBJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="CLM-hV-IXU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6Fb-Fk-zKa" secondAttribute="bottom" id="EBb-NS-hwY"/>
+                <constraint firstItem="GBW-oA-IBJ" firstAttribute="leading" secondItem="Nap-8J-HBk" secondAttribute="trailing" constant="9" id="EHG-3k-kGQ"/>
+                <constraint firstItem="CVj-1R-HB4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="79" id="VNU-t1-GHa"/>
+                <constraint firstItem="Iyg-sf-caw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="W3G-Ul-MNx"/>
+                <constraint firstItem="6Fb-Fk-zKa" firstAttribute="top" secondItem="Iyg-sf-caw" secondAttribute="bottom" constant="49" id="dAg-bZ-zLM"/>
+                <constraint firstItem="Nap-8J-HBk" firstAttribute="centerX" secondItem="GBW-oA-IBJ" secondAttribute="centerX" id="fEh-w8-chI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6Fb-Fk-zKa" secondAttribute="trailing" id="iHR-tr-jTf"/>
+                <constraint firstItem="CVj-1R-HB4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="ix6-Ah-h0i"/>
+                <constraint firstItem="6Fb-Fk-zKa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tQz-GU-j2s"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GBW-oA-IBJ" secondAttribute="trailing" constant="57" id="v2h-cZ-eDF"/>
+            </constraints>
+            <point key="canvasLocation" x="140.57971014492756" y="69.642857142857139"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

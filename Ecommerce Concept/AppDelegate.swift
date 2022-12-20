@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainView = MainViewController()
         let productDetails = ProductDetailsViewController()
         let nav = UINavigationController(rootViewController: mainView)
-        nav.viewControllers = [mainView, productDetails]
+        nav.viewControllers = [mainView]
         window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
         

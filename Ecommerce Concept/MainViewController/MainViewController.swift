@@ -4,6 +4,7 @@ class MainViewController: UIViewController {
     private var mainViewModel: MainViewModel?
     private var projectColors = ProjectColors()
     private var categoryViewModel = CategoryViewModel()
+    let filterViewController = FilterViewController()
     @IBOutlet private var categoryCollectionView: UICollectionView!
     @IBOutlet private var salesCollectionView: UICollectionView!
     @IBOutlet private var hotOffersCollectionView: UICollectionView!
