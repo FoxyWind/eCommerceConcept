@@ -1,15 +1,16 @@
 import UIKit
 
 class CartViewController: UIViewController {
-    @IBOutlet var addAddressView: UIView!
-    @IBOutlet var addAddressImageView: UIImageView!
-    @IBOutlet var backButtonView: UIView!
-    @IBOutlet var cartCollectionView: UIView!
-    @IBOutlet var backButtonImageView: UIImageView!
-    @IBOutlet var cartInfoView: UIView!
-    @IBOutlet var cartView: UIView!
-    @IBOutlet var totalAmountLabel: UILabel!
-    @IBOutlet var deliveryAmountLabel: UILabel!
+    @IBOutlet private var addAddressView: UIView!
+    @IBOutlet private var addAddressImageView: UIImageView!
+    @IBOutlet private var backButtonView: UIView!
+    @IBOutlet private var cartCollectionView: UICollectionView!
+    @IBOutlet private var backButtonImageView: UIImageView!
+    @IBOutlet private var cartInfoView: UIView!
+    @IBOutlet private var cartView: UIView!
+    @IBOutlet private var checkoutButtonView: UIButton!
+    @IBOutlet private var totalAmountLabel: UILabel!
+    @IBOutlet private var deliveryAmountLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,26 @@ class CartViewController: UIViewController {
         cartInfoView.layer.borderWidth = 1
         cartInfoView.layer.borderColor = UIColor.gray.cgColor
     }
+    
+    private func setupCartCollection() {
+        self.cartCollectionView.register(UINib(nibName: "CartCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CartCollectionViewCell")
+        self.cartCollectionView.delegate = self
+        self.cartCollectionView.dataSource = self
+    }
+}
 
-
+extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = cartCollectionView.dequeueReusableCell(withReuseIdentifier: "CartCollectionViewCell", for: indexPath) as? CartCollectionViewCell
+        else { return UICollectionViewCell() }
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: view.frame.width, height: 91)
+    }
 }
