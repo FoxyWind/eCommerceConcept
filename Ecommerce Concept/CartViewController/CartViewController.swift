@@ -1,6 +1,7 @@
 import UIKit
 
 class CartViewController: UIViewController {
+    private var productDetailViewModel: PhoneDetailViewModel?
     @IBOutlet private var addAddressView: UIView!
     @IBOutlet private var addAddressImageView: UIImageView!
     @IBOutlet private var backButtonView: UIView!
@@ -14,10 +15,18 @@ class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupUI()
+        
+        productViewModelInit()
+        setupCartCollection()
     }
-
+    
+    func productViewModelInit() {
+        self.productDetailViewModel = PhoneDetailViewModel(completion: {
+            self.cartCollectionView.reloadData()
+            self.setupUI()
+        })
+    }
+    
     private func setupUI() {
         cartView.layer.cornerRadius = 25
         cartCollectionView.layer.cornerRadius = 25
@@ -40,8 +49,15 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = cartCollectionView.dequeueReusableCell(withReuseIdentifier: "CartCollectionViewCell", for: indexPath) as? CartCollectionViewCell
+        guard let productDetailViewModel = productDetailViewModel,
+              let data = productDetailViewModel.fetchImage(urlString: (productDetailViewModel.productDetails.images?[indexPath.item])!),
+              let image = UIImage(data: data),
+              let cell = cartCollectionView.dequeueReusableCell(withReuseIdentifier: "CartCollectionViewCell", for: indexPath) as? CartCollectionViewCell
         else { return UICollectionViewCell() }
+        
+        cell.setupCell(image: image,
+                       productName: productDetailViewModel.productDetails.title ?? "Test",
+                       amountPrice: productDetailViewModel.productDetails.price ?? 404)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
