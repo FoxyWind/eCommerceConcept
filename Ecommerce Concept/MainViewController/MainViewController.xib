@@ -191,7 +191,6 @@
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="DpW-9U-SR2">
                     <rect key="frame" x="7" y="228" width="386" height="182"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="182" id="8G6-7q-M11"/>
                     </constraints>

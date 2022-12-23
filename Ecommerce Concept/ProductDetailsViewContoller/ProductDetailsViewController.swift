@@ -42,6 +42,14 @@ class ProductDetailsViewController: UIViewController {
         })
     }
     
+    @IBAction func addToCardButton(_ sender: Any) {
+        guard let model = productDetailViewModel?.productDetails else { return }
+        if let value = DataBaseManager.shared.cartDictionary[model] {
+            DataBaseManager.shared.cartDictionary[model] = value + 1
+        } else {
+            DataBaseManager.shared.cartDictionary[model] = 1
+        }
+    }
     private func setupCatalogCollection() {
         self.catalogCollectionView.delegate = self
         self.catalogCollectionView.dataSource = self
@@ -74,7 +82,7 @@ class ProductDetailsViewController: UIViewController {
         phoneDescriptionView.layer.cornerRadius = 10
         phoneDescriptionView.backgroundColor = .white
         cpuImageView.image = UIImage(named: "cpu")
-        cameraImageView.image = UIImage(named: "camera")
+        cameraImageView.image = UIImage(named: "Camera")
         sdImageView.image = UIImage(named: "sd")
         ssdImageView.image = UIImage(named: "ssd")
         cpuNameLabel.text = productDetailViewModel.productDetails.cpu

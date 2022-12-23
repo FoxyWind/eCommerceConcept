@@ -67,7 +67,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="zXk-2x-FML" secondAttribute="bottom" constant="32" id="1Ho-38-Hbo"/>
                             <constraint firstItem="zcv-L5-h3N" firstAttribute="top" secondItem="xhP-75-buW" secondAttribute="top" id="8xv-1Z-oqL"/>

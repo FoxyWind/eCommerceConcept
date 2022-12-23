@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-struct PhoneDetails: Decodable {
+struct PhoneDetails: Decodable, Hashable {
     var cpu: String?
     var camera: String?
     var capacity: [String]?

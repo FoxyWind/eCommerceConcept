@@ -98,7 +98,7 @@
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cmJ-xe-MM6">
                     <rect key="frame" x="0.0" y="146" width="414" height="349"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="tintColor" red="0.1683101561" green="0.1683101561" blue="0.1683101561" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="349" id="fI3-f0-Hq7"/>
                     </constraints>
@@ -417,15 +417,27 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkb-Kd-GoZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="55"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title=""/>
+                                    <connections>
+                                        <action selector="addToCardButton:" destination="-1" eventType="touchUpInside" id="kMz-xp-7q9"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Mkb-Kd-GoZ" secondAttribute="trailing" id="09Y-Kk-ZFo"/>
+                                <constraint firstAttribute="bottom" secondItem="Mkb-Kd-GoZ" secondAttribute="bottom" id="4wr-Ke-lcS"/>
                                 <constraint firstItem="ZoH-1p-eud" firstAttribute="leading" secondItem="Aps-AG-flp" secondAttribute="leading" constant="45" id="ELT-QN-yx9"/>
                                 <constraint firstItem="ZoH-1p-eud" firstAttribute="centerY" secondItem="Aps-AG-flp" secondAttribute="centerY" id="b8N-lI-Mut"/>
                                 <constraint firstItem="NPe-DQ-Spi" firstAttribute="centerY" secondItem="Aps-AG-flp" secondAttribute="centerY" id="k5u-Zn-iiO"/>
                                 <constraint firstAttribute="height" constant="55" id="pWX-Gy-fQq"/>
                                 <constraint firstAttribute="trailing" secondItem="NPe-DQ-Spi" secondAttribute="trailing" constant="38" id="skl-pL-kOd"/>
+                                <constraint firstItem="Mkb-Kd-GoZ" firstAttribute="leading" secondItem="Aps-AG-flp" secondAttribute="leading" id="vXh-Rk-73R"/>
+                                <constraint firstItem="Mkb-Kd-GoZ" firstAttribute="top" secondItem="Aps-AG-flp" secondAttribute="top" id="zI8-kE-ZHD"/>
                             </constraints>
                         </view>
                     </subviews>

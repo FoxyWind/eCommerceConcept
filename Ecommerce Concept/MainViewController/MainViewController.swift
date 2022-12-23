@@ -122,7 +122,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 for: indexPath
             ) as! SalesCollectionViewCell
             
-            cell.backgroundColor = projectColors.darkColor
             cell.setup(
                 phoneName: mainViewModel.shopBook.bestSales[indexPath.item].title,
                 desctiption: mainViewModel.shopBook.bestSales[indexPath.item].subtitle,
@@ -164,4 +163,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         default: return CGSize(width: 71, height: 71)
         }
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let currentPoint = touch.location(in: self.view)
+                print("main")
+            }
+    }
+    
 }

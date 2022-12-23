@@ -11,9 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         let mainView = MainViewController()
-        let productDetails = ProductDetailsViewController()
         let nav = UINavigationController(rootViewController: mainView)
-        nav.viewControllers = [mainView]
         window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
         

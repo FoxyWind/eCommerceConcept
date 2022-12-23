@@ -11,7 +11,7 @@ class SalesCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var buyButton: UIButton!
     
     func setup(phoneName: String, desctiption: String, image: UIImage, isNew: Bool) {
-        
+        phoneImageView.layer.cornerRadius = 20
         statusRedView.backgroundColor = projectColors.redColor
         mainView.layer.cornerRadius = 20
         statusRedView.layer.cornerRadius = statusRedView.frame.width / 2

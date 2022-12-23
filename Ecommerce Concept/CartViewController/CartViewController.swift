@@ -37,15 +37,15 @@ class CartViewController: UIViewController {
     }
     
     private func setupCartCollection() {
-        self.cartCollectionView.register(UINib(nibName: "CartCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CartCollectionViewCell")
         self.cartCollectionView.delegate = self
         self.cartCollectionView.dataSource = self
+        self.cartCollectionView.register(UINib(nibName: "CartCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CartCollectionViewCell")
     }
 }
 
 extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
