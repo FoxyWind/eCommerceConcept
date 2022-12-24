@@ -17,6 +17,7 @@ class FilterViewController: UIViewController {
     }
     
     func setup() {
+        doneButton.layer.cornerRadius = 20
         doneButton.backgroundColor = projectColors.redColor
         xButtonView.layer.cornerRadius = 10
         xButtonView.setImage(UIImage(named: "xButton"), for: .normal)

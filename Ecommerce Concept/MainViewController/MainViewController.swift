@@ -4,7 +4,6 @@ class MainViewController: UIViewController {
     private var mainViewModel: MainViewModel?
     private var projectColors = ProjectColors()
     private var categoryViewModel = CategoryViewModel()
-    let filterViewController = FilterViewController()
     @IBOutlet private var categoryCollectionView: UICollectionView!
     @IBOutlet private var salesCollectionView: UICollectionView!
     @IBOutlet private var hotOffersCollectionView: UICollectionView!
@@ -17,12 +16,10 @@ class MainViewController: UIViewController {
     
     @IBAction func showOptionsButton(_ sender: Any) {
         let filterViewController = FilterViewController()
-        let view = filterViewController.view
-        view?.frame = CGRect(x: 0, y: (self.view.frame.height / 2) + 26,
-                             width: self.view.frame.width,
-                             height: (self.view.frame.height / 2) - 26)
-        guard let view = view else { return }
-        self.view.addSubview(view)
+        if let sheet = filterViewController.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        present(filterViewController, animated: true)
         filterViewController.delegate = self
     }
     
@@ -45,9 +42,8 @@ class MainViewController: UIViewController {
 
 extension MainViewController: FilterViewDelegate {
     func closeView(sender: FilterViewController) {
-        sender.view.removeFromSuperview()
+        sender.dismiss(animated: true)
     }
-    
 }
 
 extension MainViewController {
@@ -146,6 +142,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 previosPrice: String(mainViewModel.shopBook.hotOffers[indexPath.item].noDiscountPrice),
                 phoneName: mainViewModel.shopBook.hotOffers[indexPath.item].title,
                 phoneImage: image)
+            
             return cell
             
         default: return UICollectionViewCell()
@@ -163,11 +160,4 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         default: return CGSize(width: 71, height: 71)
         }
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let currentPoint = touch.location(in: self.view)
-                print("main")
-            }
-    }
-    
 }
