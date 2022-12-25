@@ -104,6 +104,9 @@
                             <buttonConfiguration key="configuration" style="plain" title="see more">
                                 <fontDescription key="titleFontDescription" name="MarkPro" family="Mark Pro" pointSize="15"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="goToDetailsButton:" destination="-1" eventType="touchUpInside" id="b3l-Om-og4"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray4Color"/>
@@ -153,7 +156,10 @@
                                 <constraint firstAttribute="height" constant="18" id="ISK-fN-p7w"/>
                             </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title=""/>
+                            <buttonConfiguration key="configuration" style="plain" image="Bag" title=""/>
+                            <connections>
+                                <action selector="goToCartButton:" destination="-1" eventType="touchUpInside" id="RMW-rO-ynH"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuK-uY-eMh">
                             <rect key="frame" x="258" y="27" width="18" height="18"/>
@@ -162,7 +168,7 @@
                                 <constraint firstAttribute="height" constant="18" id="tsm-cB-zWr"/>
                             </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title=""/>
+                            <buttonConfiguration key="configuration" style="plain" image="Heart" title=""/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0b-P3-bUW">
                             <rect key="frame" x="328" y="27" width="18" height="18"/>
@@ -171,7 +177,7 @@
                                 <constraint firstAttribute="width" constant="18" id="y06-Xa-DmJ"/>
                             </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title=""/>
+                            <buttonConfiguration key="configuration" style="plain" image="Human" title=""/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0039215686269999999" green="0.0" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -230,6 +236,9 @@
         </view>
     </objects>
     <resources>
+        <image name="Bag" width="18" height="18"/>
+        <image name="Heart" width="19" height="17"/>
+        <image name="Human" width="18" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

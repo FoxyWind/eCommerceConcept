@@ -14,6 +14,11 @@ class MainViewController: UIViewController {
     @IBOutlet private var accountButton: UIButton!
     private var delegate: FilterViewDelegate?
     
+    @IBAction func goToDetailsButton(_ sender: Any) {
+        let productDetailsViewController = ProductDetailsViewController(nibName: "ProductDetailsViewController", bundle: nil)
+        self.navigationController?.pushViewController(productDetailsViewController, animated: false)
+    }
+    
     @IBAction func showOptionsButton(_ sender: Any) {
         let filterViewController = FilterViewController()
         if let sheet = filterViewController.sheetPresentationController {
@@ -21,6 +26,11 @@ class MainViewController: UIViewController {
         }
         present(filterViewController, animated: true)
         filterViewController.delegate = self
+    }
+    
+    @IBAction func goToCartButton(_ sender: Any) {
+        let cartViewController = CartViewController(nibName: "CartViewController", bundle: nil)
+        self.navigationController?.pushViewController(cartViewController, animated: false)
     }
     
     override func viewDidLoad() {
@@ -78,7 +88,6 @@ extension MainViewController {
         self.hotOffersCollectionView.register(UINib(nibName: "BestSellerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BestSellerCollectionViewCell")
     }
 }
-
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
