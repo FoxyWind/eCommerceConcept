@@ -2,6 +2,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     private var mainViewModel: MainViewModel?
+    private var delegate: FilterViewDelegate?
     private var projectColors = ProjectColors()
     private var categoryViewModel = CategoryViewModel()
     @IBOutlet private var categoryCollectionView: UICollectionView!
@@ -12,11 +13,15 @@ class MainViewController: UIViewController {
     @IBOutlet private var myCartButton: UIButton!
     @IBOutlet private var favouritesButton: UIButton!
     @IBOutlet private var accountButton: UIButton!
-    private var delegate: FilterViewDelegate?
     
     @IBAction func goToDetailsButton(_ sender: Any) {
         let productDetailsViewController = ProductDetailsViewController(nibName: "ProductDetailsViewController", bundle: nil)
         self.navigationController?.pushViewController(productDetailsViewController, animated: false)
+    }
+    
+    @IBAction func goToCartButton(_ sender: Any) {
+        let cartViewController = CartViewController(nibName: "CartViewController", bundle: nil)
+        self.navigationController?.pushViewController(cartViewController, animated: false)
     }
     
     @IBAction func showOptionsButton(_ sender: Any) {
@@ -27,19 +32,15 @@ class MainViewController: UIViewController {
         present(filterViewController, animated: true)
         filterViewController.delegate = self
     }
-    
-    @IBAction func goToCartButton(_ sender: Any) {
-        let cartViewController = CartViewController(nibName: "CartViewController", bundle: nil)
-        self.navigationController?.pushViewController(cartViewController, animated: false)
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
-        setupExplorerBarUI()
-        setupColletions()
-        viewModelInit()
+        
+            self.setupUI()
+            self.setupExplorerBarUI()
+            self.setupColletions()
+            self.viewModelInit()
     }
     
     func viewModelInit() {

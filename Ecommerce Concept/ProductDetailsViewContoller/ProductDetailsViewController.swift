@@ -37,9 +37,18 @@ class ProductDetailsViewController: UIViewController {
     
     func productViewModelInit() {
         self.productDetailViewModel = PhoneDetailViewModel(completion: {
+            self.setupProductDetails()
             self.catalogCollectionView.reloadData()
-            self.setupUI()
         })
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: false)
+    }
+    
+    @IBAction func goToCartButton(_ sender: Any) {
+        let cartViewController = CartViewController(nibName: "CartViewController", bundle: nil)
+        self.navigationController?.pushViewController(cartViewController, animated: false)
     }
     
     @IBAction func addToCardButton(_ sender: Any) {
@@ -62,9 +71,18 @@ class ProductDetailsViewController: UIViewController {
         }
     }
     
-    private func setupUI() {
+    private func setupProductDetails() {
         guard let productDetailViewModel = productDetailViewModel
         else { return }
+        cpuNameLabel.text = productDetailViewModel.productDetails.cpu
+        cameraNameLabel.text = productDetailViewModel.productDetails.camera
+        sdNameLabel.text = productDetailViewModel.productDetails.sd
+        ssdNameLabel.text = productDetailViewModel.productDetails.ssd
+        phoneNameLabel.text = productDetailViewModel.productDetails.title
+    }
+    
+    private func setupUI() {
+        self.navigationController?.navigationBar.isHidden = true
         catalogCollectionView.backgroundColor = projectColors.backGround
         view.backgroundColor = projectColors.backGround
         addToCartButton.layer.cornerRadius = 10
@@ -85,11 +103,6 @@ class ProductDetailsViewController: UIViewController {
         cameraImageView.image = UIImage(named: "Camera")
         sdImageView.image = UIImage(named: "sd")
         ssdImageView.image = UIImage(named: "ssd")
-        cpuNameLabel.text = productDetailViewModel.productDetails.cpu
-        cameraNameLabel.text = productDetailViewModel.productDetails.camera
-        sdNameLabel.text = productDetailViewModel.productDetails.sd
-        ssdNameLabel.text = productDetailViewModel.productDetails.ssd
-        phoneNameLabel.text = productDetailViewModel.productDetails.title
         starImageCollection.forEach { UIImageView in
             UIImageView.image = UIImage(named: "Star")
         }

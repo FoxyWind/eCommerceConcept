@@ -1,6 +1,5 @@
 import Foundation
 
-
 class PhoneDetailViewModel {
     private let dataLoader = ProductDataLoader()
     var productDetails = PhoneDetails()

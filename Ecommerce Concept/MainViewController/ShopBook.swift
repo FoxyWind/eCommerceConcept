@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 struct CategoryViewModel {
-    var category = ["Phones", "Computer", "Health", "Books", "Heart", "Human"]
+    var category = ["Camera", "Computer", "Health", "Books", "Computer", "Human"]
 }
 
 struct ShopBook: Decodable {

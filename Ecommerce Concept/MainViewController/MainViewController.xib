@@ -158,7 +158,7 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="Bag" title=""/>
                             <connections>
-                                <action selector="goToCartButton:" destination="-1" eventType="touchUpInside" id="RMW-rO-ynH"/>
+                                <action selector="goToCartButton:" destination="-1" eventType="touchUpInside" id="pc1-t1-6Af"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuK-uY-eMh">

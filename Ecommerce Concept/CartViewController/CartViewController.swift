@@ -19,6 +19,10 @@ class CartViewController: UIViewController {
         productViewModelInit()
         setupCartCollection()
     }
+     
+    @IBAction func goToProductDetailsButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+    }
     
     func productViewModelInit() {
         self.productDetailViewModel = PhoneDetailViewModel(completion: {
@@ -28,8 +32,12 @@ class CartViewController: UIViewController {
     }
     
     private func setupUI() {
+        self.navigationController?.navigationBar.isHidden = true
         cartView.layer.cornerRadius = 25
+        checkoutButtonView.layer.cornerRadius = 10
         cartCollectionView.layer.cornerRadius = 25
+        backButtonView.layer.cornerRadius = 10
+        addAddressView.layer.cornerRadius = 10
         backButtonImageView.image = UIImage(named: "Back")
         addAddressImageView.image = UIImage(named: "Location")
         cartInfoView.layer.borderWidth = 1
@@ -61,7 +69,6 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: view.frame.width, height: 91)
     }
 }
