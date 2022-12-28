@@ -31,6 +31,7 @@ class ProductDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         productViewModelInit()
+        setupUI()
         configure()
         setupCatalogCollection()
     }

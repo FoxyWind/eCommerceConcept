@@ -15,7 +15,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController" customModule="Ecommerce_Concept" customModuleProvider="target">
             <connections>
+                <outlet property="brandTableView" destination="8t7-dg-hFv" id="WiM-DF-k3r"/>
+                <outlet property="brandTextField" destination="cM2-AS-lvg" id="wLR-my-YTR"/>
                 <outlet property="doneButton" destination="0Qd-yy-i9s" id="swf-XG-u1r"/>
+                <outlet property="priceTextField" destination="c0J-w4-PNh" id="hK4-5E-n5L"/>
+                <outlet property="sizeTextField" destination="IPA-z6-Rob" id="JZ2-l6-wEB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="xButtonView" destination="gzg-uE-dLu" id="b39-XY-bzT"/>
             </connections>
@@ -63,9 +67,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cM2-AS-lvg">
+                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cM2-AS-lvg">
                     <rect key="frame" x="44" y="143" width="334" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -95,13 +98,19 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8t7-dg-hFv">
+                    <rect key="frame" x="44" y="176" width="334" height="20"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="0Qd-yy-i9s" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="24" id="1CX-Kv-teX"/>
                 <constraint firstItem="qLf-dl-Vnp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="31" id="9WM-lZ-Spp"/>
+                <constraint firstItem="8t7-dg-hFv" firstAttribute="width" secondItem="cM2-AS-lvg" secondAttribute="width" id="GZE-YT-Bim"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Qd-yy-i9s" secondAttribute="trailing" constant="20" id="MEf-kz-QBR"/>
+                <constraint firstItem="8t7-dg-hFv" firstAttribute="leading" secondItem="cM2-AS-lvg" secondAttribute="leading" id="REI-Gg-XtV"/>
                 <constraint firstItem="gzg-uE-dLu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="44" id="glF-VH-vDN"/>
                 <constraint firstItem="qLf-dl-Vnp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ivb-tL-zgx"/>
                 <constraint firstItem="gzg-uE-dLu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="24" id="uhI-WG-gdo"/>
