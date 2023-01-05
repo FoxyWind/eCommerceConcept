@@ -7,10 +7,6 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var previosPriceLabel: UILabel!
     @IBOutlet private var phoneNameLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
     
     func setup(price: String, previosPrice: String, phoneName: String, phoneImage: UIImage) {
         backGroundView.layer.cornerRadius = 10
